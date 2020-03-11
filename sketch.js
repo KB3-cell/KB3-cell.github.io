@@ -9,7 +9,7 @@ let increase = 1;
 let decreasing = false;
 
 function setup() {
-  frameRate(30)
+  frameRate(10)
   createCanvas(800, 800);
   background(0);
   noStroke();

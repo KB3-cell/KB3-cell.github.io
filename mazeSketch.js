@@ -3,7 +3,7 @@ let maze;
 let dir = "";
 
 function setup() {
-  createCanvas(1000, 1000);
+  createCanvas(800, 800);
   maze = new mazeGen(rez);
   player1 = new player(rez);
 }
@@ -18,7 +18,7 @@ function draw() {
   fill(200);
   strokeWeight(4);
   for (let i = 0; i < maze.mazeWalls.length; i++) {
-    line(maze.mazeWalls[i][0][0], maze.mazeWalls[i][0][1], maze.mazeWalls[i][1]            [0], maze.mazeWalls[i][1][1]);
+    line(maze.mazeWalls[i][0][0], maze.mazeWalls[i][0][1], maze.mazeWalls[i][1][0], maze.mazeWalls[i][1][1]);
   }
   strokeWeight(2)
   fill(0,225,255)

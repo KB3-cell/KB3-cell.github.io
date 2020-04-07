@@ -3,7 +3,7 @@ let maze;
 let dir = "";
 
 function setup() {
-  createCanvas(screen.width, screen.height);
+  createCanvas(1000, 1000);
   maze = new mazeGen(rez);
   player1 = new player(rez);
 }

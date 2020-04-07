@@ -1,4 +1,4 @@
-let rez = 20;
+let rez = 100;
 let maze;
 let dir = "";
 

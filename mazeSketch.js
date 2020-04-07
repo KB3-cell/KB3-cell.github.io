@@ -1,9 +1,9 @@
-let rez = 4;
+let rez = 20;
 let maze;
 let dir = "";
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(screen.width, screen.height);
   maze = new mazeGen(rez);
   player1 = new player(rez);
 }

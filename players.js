@@ -11,7 +11,7 @@ class player {
     this.playerDirection = dir;
     if (this.playerDirection === "left"){
       if (this.Xcor-width/this.gridSize > 0){
-        if(this.playerIndex-1 in map.get(this.playerIndex)){
+        if(map.get(this.playerIndex).includes(this.playerIndex-1)){
           this.Xcor -= width/this.gridSize;
           this.playerIndex-=1;
         }
@@ -19,7 +19,7 @@ class player {
     }
     else if (this.playerDirection === "up"){
       if (this.Ycor-width/this.gridSize > 0){
-        if(this.playerIndex-this.gridSize in map.get(this.playerIndex)){
+        if(map.get(this.playerIndex).includes(this.playerIndex-this.gridSize)){
           this.Ycor -= width/this.gridSize;
           this.playerIndex-=this.gridSize;
         }
@@ -27,7 +27,7 @@ class player {
     }
     else if (this.playerDirection === "down"){
       if (this.Ycor+width/this.gridSize < width){
-        if(this.playerIndex+this.gridSize in map.get(this.playerIndex)){
+        if(map.get(this.playerIndex).includes(this.playerIndex+this.gridSize)){
           this.Ycor += width/this.gridSize;
           this.playerIndex+=this.gridSize;
         }
@@ -35,13 +35,12 @@ class player {
     }
     else if (this.playerDirection === "right"){
       if (this.Xcor+width/this.gridSize < width){
-        if(this.playerIndex+1 in map.get(this.playerIndex)){
+        if(map.get(this.playerIndex).includes(this.playerIndex+1)){
           this.Xcor += width/this.gridSize;
           this.playerIndex+=1;
         }
       }
     }
-    console.log(this.playerIndex)
     this.playerDirection = null;
   }
 }

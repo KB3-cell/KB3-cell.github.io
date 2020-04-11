@@ -25,6 +25,7 @@ class mazeGen {
     while (this.unionMaker.count != 1) {
       let randomNum = int(random(0, this.mazeWalls.length));
       let randomWall = this.mazeWalls[randomNum];
+      //Lines below check if the lines are conected if they are not they will break the wall and connect the index's together.
       if (!this.unionMaker.connected(randomWall[2][0], randomWall[2][1])) {
         this.mazeWalls.splice(randomNum, 1);
         this.unionMaker.union(randomWall[2][0], randomWall[2][1]);
@@ -43,7 +44,7 @@ class mazeGen {
         }
       }
     }
-    console.log(this.removedWalls.get(5))
+    //console.log(this.removedWalls.get(2))
   }
 }
 

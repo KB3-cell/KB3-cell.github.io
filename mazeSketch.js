@@ -1,5 +1,5 @@
-let rez = 100;
-let maze;
+let rez = 10;
+let mazeList;
 let dir = "";
 
 function setup() {
@@ -23,6 +23,11 @@ function draw() {
   strokeWeight(2)
   fill(0,225,255)
   circle(player1.Xcor, player1.Ycor, width/(rez*1.2));
+  if(player1.playerIndex === rez*rez-1){
+    rez+=5;
+    maze = new mazeGen(rez);
+    player1 = new player(rez);
+  }
 }
 
 function keyPressed(){
@@ -31,5 +36,5 @@ function keyPressed(){
   else if (keyCode === 40) dir = "down";
   else if (keyCode === 39) dir = "right";
   player1.move(dir, maze.removedWalls);
-  console.log(maze.removedWalls.get(player1.playerIndex))
+  //console.log(maze.removedWalls.get(player1.playerIndex))
 }
